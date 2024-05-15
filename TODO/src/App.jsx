@@ -9,14 +9,19 @@ import SearchField from "./components/search"
 function App() {
 //state for task array 
 const[arrayCollection, setArrayCollection] = useState([
-  { task: 'Cleaning', id:1 }
+  { task: 'Cleaning', id:1 },
+  { task: 'washing', id:9 },
+  { task: 'dancing', id:10 }
+
 ])
 //state for unique id
 const[counter, setCounter] = useState([2])
 //state for input field
 const[inputField, setInputField] = useState('Hello')
 //state for search input field
-const{searchInput, setSearchInput} = useState('')
+const[searchInput, setSearchInput] = useState('')
+//state for filtering the search item
+const[filterSearch, setFilterSearch] = useState([])
 
 //submitTask function
 const submitTask = (event) => {
@@ -28,7 +33,7 @@ const submitTask = (event) => {
   }
   setCounter(previous => previous + 1 )
   //condition for checking whether there is same task in the list or not if yes then give alert about that
-  //to remove the cas sensitiveness during the searching time added toLowerCase in both side
+  //to remove the case sensitiveness during the searching time added toLowerCase in both side
   const existingTask = arrayCollection.filter(task => task.task.toLowerCase() === inputField.toLowerCase());
   if(existingTask.length > 0){
     alert(`${inputField} already added to task`)
@@ -40,19 +45,27 @@ const submitTask = (event) => {
 }
 //function changeSearchInput
 const changeSearchInput = (event) =>{
-  //update the value of searchInput
-  setSearchInput(event.target.value)
+  //update the current value of searchInput
+  const searchItem = event.target.value
+  setSearchInput(searchItem)
+  
+  //this create a new array of item which convert the task and search item into lowecase which prevent the search caseSensitive
+  const filteredItem = arrayCollection.filter((tasks) => tasks.task.toLowerCase().includes(searchItem.toLowerCase()))
+  //filtered items will store in filterSearch
+  setFilterSearch(filteredItem);
 }
+
 
 //function inputChange 
 const inputChange = (event) =>{
   //update the value of inputChange
   setInputField(event.target.value)
 }
+
   return (
     <>
      <div>
-      <SearchField changeSearchInput = {changeSearchInput} searchInput= {searchInput}/>
+      <SearchField changeSearchInput = {changeSearchInput} searchInput= {searchInput} filterSearch={filterSearch}/>
       <AddTask inputField = {inputField} inputChange = {inputChange} submitTask={submitTask}/>
       <Lists arrayCollection={arrayCollection}/>
     
