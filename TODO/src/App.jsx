@@ -27,9 +27,16 @@ const submitTask = (event) => {
     id: counter
   }
   setCounter(previous => previous + 1 )
-//add the taskobj item in arrayCollection state
+  //condition for checking whether there is same task in the list or not if yes then give alert about that
+  //to remove the cas sensitiveness during the searching time added toLowerCase in both side
+  const existingTask = arrayCollection.filter(task => task.task.toLowerCase() === inputField.toLowerCase());
+  if(existingTask.length > 0){
+    alert(`${inputField} already added to task`)
+  }else{
+    //add the taskobj item in arrayCollection state
   setArrayCollection(arrayCollection.concat(taskObj))
   setInputField('')
+  }
 }
 //function changeSearchInput
 const changeSearchInput = (event) =>{
