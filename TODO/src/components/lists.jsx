@@ -29,7 +29,6 @@ const Lists = ({arrayCollection}) => {
                  style={{backgroundColor: isClicked[list.id] ? 'green' : {},
                  display: deleteItem[list.id] ? 'none' : ''}}
                  />
-                
                 <span className="ListItemText"  
                     style={{textDecoration: isClicked[list.id] ? 'line-through' : {},
                     display: deleteItem[list.id] ? 'none' : ''}}>

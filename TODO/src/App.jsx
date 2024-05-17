@@ -4,14 +4,15 @@ import { useState } from "react"
 import AddTask from "./components/addTask"
 import Lists from "./components/lists"
 import SearchField from "./components/search"
+import Time from './components/time'
 
 
 function App() {
 //state for task array 
 const[arrayCollection, setArrayCollection] = useState([
-  /*{ task: 'Cleaning', id:1 },
+  { task: 'Cleaning', id:1 },
   { task: 'washing', id:9 },
-  { task: 'dancing', id:10 }*/
+  { task: 'dancing', id:10 }
 
 ])
 //state for unique id
@@ -66,6 +67,7 @@ const inputChange = (event) =>{
     <>
      <div className='Todo'>
       <AddTask inputField = {inputField} inputChange = {inputChange} submitTask={submitTask}/>
+      <Time/>
       <Lists arrayCollection={arrayCollection}/>
       <div className="SearchContainer">
       <SearchField changeSearchInput = {changeSearchInput} searchInput= {searchInput} filterSearch={filterSearch}/>

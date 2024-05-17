@@ -23,14 +23,20 @@
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    
 }
 .Lists ul {
     list-style-type: none;   
 }
-.ListItemText {
-    margin-left: 50px;   /* Adjust this value as needed */
+.ListItemText{
+    margin-left: 30%;
+    max-width: 50%; 
+    display: flex;
+    word-wrap: break-word;
 }
+
 .SearchContainer{
     position: absolute;
     top: 34%;
@@ -41,9 +47,12 @@
     text-align: right;
 }
 .SquareIcon{
-    display: flex;
     position: absolute;
+    margin-left: 20%;
 }
 .TrashIcon{
-   margin-left: 40px; 
+ position: absolute;
+ margin-left: 80%;
+ margin-top: -2%;
 }
+
