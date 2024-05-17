@@ -31,7 +31,7 @@ const deletedClick = (id) => {
                 <span className="ListItemText"  
                     style={{textDecoration: isClicked[list.id] ? 'line-through' : {},
                     }}>
-                    {list.task}
+                    {list.task.toUpperCase()}
                 </span><br />
 
                  <FontAwesomeIcon icon={faTrash} className='TrashIcon' onClick={() => deletedClick(list.id)} /> 
