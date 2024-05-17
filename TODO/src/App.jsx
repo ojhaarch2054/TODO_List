@@ -1,4 +1,4 @@
-
+import './App.css'
 import { useState } from "react"
 //import all neccessary component from the component folder
 import AddTask from "./components/addTask"
@@ -17,7 +17,7 @@ const[arrayCollection, setArrayCollection] = useState([
 //state for unique id
 const[counter, setCounter] = useState([2])
 //state for input field
-const[inputField, setInputField] = useState('Hello')
+const[inputField, setInputField] = useState('')
 //state for search input field
 const[searchInput, setSearchInput] = useState('')
 //state for filtering the search item
@@ -64,11 +64,14 @@ const inputChange = (event) =>{
 
   return (
     <>
-     <div>
-      <SearchField changeSearchInput = {changeSearchInput} searchInput= {searchInput} filterSearch={filterSearch}/>
+     <div className='Todo'>
       <AddTask inputField = {inputField} inputChange = {inputChange} submitTask={submitTask}/>
       <Lists arrayCollection={arrayCollection}/>
-    
+      <div className="SearchContainer">
+      <SearchField changeSearchInput = {changeSearchInput} searchInput= {searchInput} filterSearch={filterSearch}/>
+
+      </div>
+      
      </div>
     </>
   )
