@@ -9,9 +9,9 @@ import SearchField from "./components/search"
 function App() {
 //state for task array 
 const[arrayCollection, setArrayCollection] = useState([
-  { task: 'Cleaning', id:1 },
+  /*{ task: 'Cleaning', id:1 },
   { task: 'washing', id:9 },
-  { task: 'dancing', id:10 }
+  { task: 'dancing', id:10 }*/
 
 ])
 //state for unique id
