@@ -63,12 +63,16 @@ const inputChange = (event) =>{
   setInputField(event.target.value)
 }
 
+const handleDelete = (id) => {
+  setArrayCollection(prev => prev.filter(item => item.id !== id));
+}
+
   return (
     <>
      <div className='Todo'>
       <AddTask inputField = {inputField} inputChange = {inputChange} submitTask={submitTask}/>
       <Time/>
-      <Lists arrayCollection={arrayCollection}/>
+      <Lists arrayCollection={arrayCollection} handleDelete={handleDelete}/>
       <div className="SearchContainer">
       <SearchField changeSearchInput = {changeSearchInput} searchInput= {searchInput} filterSearch={filterSearch}/>
 

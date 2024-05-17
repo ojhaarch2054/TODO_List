@@ -1,10 +1,13 @@
+body{
+    background-color:rgb(238, 238, 238) ;
+}
 .Todo{
     margin-top: 0;
 }
 .AddTask{
     text-align: center;
     padding: 2%;
-    background-color: rgb(206, 185, 145);
+    background-color: rgb(118, 171, 174);
 }
 .AddTask h3{
     font-size: 2.5em;
@@ -19,24 +22,29 @@
 }
 
 .Lists{
-    margin-top: 5%;
+    margin-top: 6%;
     font-size: 1.5em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
+    max-width: 70%;
     
 }
-.Lists ul {
-    list-style-type: none;   
-}
-.ListItemText{
-    margin-left: 30%;
-    max-width: 50%; 
-    display: flex;
+.ListItemText {
+    flex: 1 1 auto; /*grow and shrink as needed*/
+    margin-left: 10px;
+    max-width: 70%;
     word-wrap: break-word;
+    /*overflow-wrap: break-word;*/
 }
-
+.Lists ul li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;  
+}
 .SearchContainer{
     position: absolute;
     top: 34%;
@@ -45,14 +53,23 @@
 }
 .SearchItem{
     text-align: right;
+    margin-right: 2%;
 }
-.SquareIcon{
+.SearchItem input{
+    width: 80%;
+}
+.SquareIcon {
+   margin-left: 25%;
+}
+.TrashIcon {
     position: absolute;
-    margin-left: 20%;
+    right: -18%;
 }
-.TrashIcon{
- position: absolute;
- margin-left: 80%;
- margin-top: -2%;
+.Time{
+    font-size: 1.75em;
+    /*background-color: rgb(223, 208, 184);*/
+    display: inline;
+    margin-left: 1%;
+    
 }
 
